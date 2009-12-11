@@ -60,4 +60,5 @@ ActionController::Routing::Routes.draw do |map|
 
   # gbeddow - http://raindroprecords.blogspot.com/2009/01/how-to-set-up-restful-authentication.html
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
+  map.root :controller => "site", :view => "index"
 end
