@@ -41,7 +41,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: prototype_production
+  database: prototype
   pool: 5
   username: root
   password: 
