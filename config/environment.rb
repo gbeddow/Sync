@@ -42,4 +42,5 @@ Rails::Initializer.run do |config|
   # gbeddow - http://usefulfor.com/ruby/2008/05/17/restful_authentication-step-by-step-part-1/
   config.active_record.observers = :user_observer
 
+  config.action_mailer.delivery_method = :sendmail
 end
