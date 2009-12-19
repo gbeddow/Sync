@@ -3,22 +3,22 @@ class <%= class_name %>Mailer < ActionMailer::Base
     setup_email(<%= file_name %>)
     @subject    += 'Please activate your new account'
   <% if options[:include_activation] %>
-    @body[:url]  = "http://prototype-sync.heroku.com/activate/#{<%= file_name %>.activation_code}"
+    @body[:url]  = "http://sync.gbeddow.com/activate/#{<%= file_name %>.activation_code}"
   <% else %>
-    @body[:url]  = "http://prototype-sync.heroku.com/login/" <% end %>
+    @body[:url]  = "http://sync.gbeddow.com/login/" <% end %>
   end
   
   def activation(<%= file_name %>)
     setup_email(<%= file_name %>)
     @subject    += 'Your account has been activated!'
-    @body[:url]  = "http://prototype-sync.heroku.com/"
+    @body[:url]  = "http://sync.gbeddow.com/"
   end
   
   protected
     def setup_email(<%= file_name %>)
       @recipients  = "#{<%= file_name %>.email}"
       @from        = "ADMINEMAIL"
-      @subject     = "[prototype-sync.heroku.com] "
+      @subject     = "[sync.gbeddow.com] "
       @sent_on     = Time.now
       @body[:<%= file_name %>] = <%= file_name %>
     end
