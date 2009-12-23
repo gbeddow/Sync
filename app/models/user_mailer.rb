@@ -16,9 +16,10 @@ class UserMailer < ActionMailer::Base
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
-      @from        = "Postmaster"
+      @from        = "postmaster@gbeddow.com"
       @subject     = "[sync.gbeddow.com] "
       @sent_on     = Time.now
       @body[:user] = user
+      @content_type = "text/html"
     end
 end

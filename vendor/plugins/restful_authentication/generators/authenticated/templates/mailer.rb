@@ -17,9 +17,10 @@ class <%= class_name %>Mailer < ActionMailer::Base
   protected
     def setup_email(<%= file_name %>)
       @recipients  = "#{<%= file_name %>.email}"
-      @from        = "ADMINEMAIL"
+      @from        = "postmaster@gbeddow.com"
       @subject     = "[sync.gbeddow.com] "
       @sent_on     = Time.now
       @body[:<%= file_name %>] = <%= file_name %>
+      @content_type = "text/html"
     end
 end
