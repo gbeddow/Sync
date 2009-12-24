@@ -21,6 +21,5 @@ class <%= class_name %>Mailer < ActionMailer::Base
       @subject     = "[sync.gbeddow.com] "
       @sent_on     = Time.now
       @body[:<%= file_name %>] = <%= file_name %>
-      @content_type = "text/html"
     end
 end
