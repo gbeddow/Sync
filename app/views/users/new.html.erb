@@ -9,6 +9,11 @@
 <p><%= label_tag 'email' %><br/>
 <%= f.text_field :email %></p>
 
+<div id = 'form_email'>
+  <p style='margin-bottom: 3px;'><label>Email (again)</label><br />
+  <%= text_field_tag :email2, {}, :size => 29, :style => 'width:180px' %></p>
+</div>
+
 <p><%= label_tag 'password' %><br/>
 <%= f.password_field :password %></p>
 

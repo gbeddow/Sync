@@ -13,15 +13,20 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
-    @user.register! if @user && @user.valid?
-    success = @user && @user.valid?
-    if success && @user.errors.empty?
-      redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an e-mail with your activation code. If you don't receive the e-mail, be sure to check your e-mail spam folder."
+    if params[:email2].empty?
+      @user = User.new(params[:user])
+      @user.register! if @user && @user.valid?
+      success = @user && @user.valid?
+      if success && @user.errors.empty?
+        redirect_back_or_default('/')
+        flash[:notice] = "Thanks for signing up!  We're sending you an e-mail with your activation code. If you don't receive the e-mail, be sure to check your e-mail spam folder."
+      else
+        flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
+        render :action => 'new'
+      end
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
-      render :action => 'new'
+      flash[:error]  = "Spam bot.  Please try again."
+      redirect_back_or_default('/')
     end
   end
 

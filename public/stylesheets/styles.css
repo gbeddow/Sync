@@ -14,3 +14,7 @@ body {
 #content {
   width: 970px;
 }
+
+#form_email {
+    display:none;
+}
