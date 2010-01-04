@@ -1,0 +1,6 @@
+--- 
+:main_recipes: https://ey-ec2.s3.amazonaws.com/chef-ey-production.tgz
+:aws_secret_id: AKIAJXZ2CCZ6RQVPB3NA
+:api: https://cloud.engineyard.com
+:aws_secret_key: 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
+:keep: 5
