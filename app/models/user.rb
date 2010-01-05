@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  whitelist = EmailWhitelist.find(:all).collect {|email_whitelist| email_whitelist.email}
-  validates_inclusion_of    :email,    :in => whitelist, :message => "{{value}} is not in the whitelist, please contact your administrator"
+#  whitelist = EmailWhitelist.find(:all).collect {|email_whitelist| email_whitelist.email}
+#  validates_inclusion_of    :email,    :in => whitelist, :message => "{{value}} is not in the whitelist. Please contact your administrator."
 
   
 
